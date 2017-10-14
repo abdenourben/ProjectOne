@@ -44,6 +44,16 @@ public class VectorHelper {
 
     }
 
+  public static void vectorInvers(int tab[], int taille){
+        for(int i=1; i<=taille; i++){
+            int tmp;
+            tmp=tab[taille-1];
+            tab[taille-1]=tab[0];
+            tab[0]=tmp;
+        }
+    }
+
+
 
     
 
