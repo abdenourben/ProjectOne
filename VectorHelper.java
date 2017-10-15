@@ -53,6 +53,22 @@ public class VectorHelper {
         }
     }
 
+// la somme de 2 vecteur 
+
+
+public static void somme(int tab1[],int tab2[])
+{
+
+  try{
+
+    for(int i:=0 ; i<tab1.length ; i++) tab1[i] := tab1[1] + tab2[i] ;
+  }
+   catch(Exeption e){
+       System.out.println("La longuer des tableau sont défférente") ;
+   }
+
+
+}
 
 
     
