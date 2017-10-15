@@ -128,7 +128,30 @@ public static void somme(int tab1[],int tab2[])
 
 }
 
+//
+public static void max_min(int tab[], int max , int min)
+{
+    try{
 
+            int max=tab[0];
+            int min=tab[0];
+            for(int i=0 ; i<tab.length ; i++)
+            {
+                if(tab[i]>max) max=tab[i] ;
+                if(tab[i]<min) min=tab[i] ;
+            }
+    }
+      catch(Exception e)
+       {
+            System.out.println("le tableau est vide ") ;
+       }
+
+<<<<<<< HEAD
+
+}
+    
+=======
+>>>>>>> f08ac119c0daeea555508e4993398f8beac1f34c
 
 
     /**
