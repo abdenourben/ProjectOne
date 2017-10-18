@@ -17,50 +17,40 @@ public class VectorHelper {
 
 
     /**
-     *
-     * @param tab
-     *              le nouveau tableau à trier
-     * @param taille
-     *              renseigner la taille du tableau à trier, nous pouvions bien la déduire par tab.length
-     *
+     * @param tab    le nouveau tableau à trier
+     * @param taille renseigner la taille du tableau à trier, nous pouvions bien la déduire par tab.length
      * @since 1.0
-     *
-     *
      */
 
-    public static void vectorTri(int tab[],int taille){
+    public static void vectorTri(int tab[], int taille) {
 
         int indice_max;
 
-        for(int i=taille;i>1;i--){
+        for (int i = taille; i > 1; i--) {
 
-            indice_max=max(tab,i);
+            indice_max = max(tab, i);
 
-            echanger(tab,i-1,indice_max);
+            echanger(tab, i - 1, indice_max);
 
         }
 
     }
 
     /**
-     *
-     * @param tab   le nouveau tableau à trier
-     *
-     * @param taille    renseigner la taille du tableau à trier, nous pouvions bien la déduire par tab.length
-     *
-     * @return  retourn le maximum dans le tableau tab
-     *
+     * @param tab    le nouveau tableau à trier
+     * @param taille renseigner la taille du tableau à trier, nous pouvions bien la déduire par tab.length
+     * @return retourn le maximum dans le tableau tab
      */
 
-    public static int max(int tab[],int taille){
+    public static int max(int tab[], int taille) {
 
-        int i=0,indice_max=0;
+        int i = 0, indice_max = 0;
 
-        while(i<taille){
+        while (i < taille) {
 
-            if(tab[i]>tab[indice_max])
+            if (tab[i] > tab[indice_max])
 
-                indice_max=i;
+                indice_max = i;
 
             i++;
 
@@ -71,104 +61,82 @@ public class VectorHelper {
     }
 
     /**
-     *
-     * @param tab   le nouveau tableau à trier
-     * @param i     le premier indice du tableau à échanger
-     * @param j     le second indice du tableau à éhcnager avec le premier portant l'indice i
+     * @param tab le nouveau tableau à trier
+     * @param i   le premier indice du tableau à échanger
+     * @param j   le second indice du tableau à éhcnager avec le premier portant l'indice i
      * @since 1.0
      */
 
-    public static void echanger(int tab[],int i,int j){
+    public static void echanger(int tab[], int i, int j) {
 
         int tmp;
 
-        tmp=tab[i];
+        tmp = tab[i];
 
-        tab[i]=tab[j];
+        tab[i] = tab[j];
 
-        tab[j]=tmp;
+        tab[j] = tmp;
 
     }
 
     /**
-     *
-     * @param tab  en entrée un tableau dont on veut inverser les éléments
-     * @param taille    il serait préférable de renseigner la taille, nous pouvons l'obtenir avec un tab.length
+     * @param tab    en entrée un tableau dont on veut inverser les éléments
+     * @param taille il serait préférable de renseigner la taille, nous pouvons l'obtenir avec un tab.length
      */
 
 
-    public static void vectorInvers(int tab[], int taille){
-        for(int i=1; i<=taille; i++){
+    public static void vectorInvers(int tab[], int taille) {
+        for (int i = 1; i <= taille; i++) {
             int tmp;
-            tmp=tab[taille-1];
-            tab[taille-1]=tab[0];
-            tab[0]=tmp;
+            tmp = tab[taille - 1];
+            tab[taille - 1] = tab[0];
+            tab[0] = tmp;
         }
     }
 
     /**
      * Cette méthode somme deux tableaux et retourne une exception si la longueur est différente
      *
-     * @autor djamel-madani
      * @param tab1 premier tableau
      * @param tab2 deuxième tableau
+     * @autor djamel-madani
      */
 
-public static void somme(int tab1[],int tab2[])
-{
-
-  try{
-
-    for(int i=0 ; i<tab1.length ; i++) tab1[i] = tab1[i] + tab2[i] ;
-  }
-   catch(Exception e){
-       System.out.println("La longueur des tableaux est différente") ;
-   }
+    public static void somme(int tab1[], int tab2[]) throws Exception {
 
 
-}
 
-//
-public static void max_min(int tab[], int max , int min)
-{
-    try{
+            for (int i = 0; i < tab1.length; i++) tab1[i] = tab1[i] + tab2[i];
 
-            int max=tab[0];
-            int min=tab[0];
-            for(int i=0 ; i<tab.length ; i++)
-            {
-                if(tab[i]>max) max=tab[i] ;
-                if(tab[i]<min) min=tab[i] ;
-            }
+
     }
-      catch(Exception e)
-       {
-            System.out.println("le tableau est vide ") ;
-       }
-
-<<<<<<< HEAD
-
-}
-    
-=======
->>>>>>> f08ac119c0daeea555508e4993398f8beac1f34c
 
 
     /**
-     *
-     *
      * @param args spécifique à la méthode main
      */
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        int t[]={2,1,4,6,3};
+        int t[] = {2, 1, 4, 6, 3};
+        int tt[]= {2,1,4};
 
-        vectorTri(t,t.length);
-        vectorInvers(t,t.length);
 
-        for(int i=0; i<t.length;i++)
+        vectorTri(t, t.length);
+        vectorInvers(t, t.length);
+
+        try {
+            somme(t,tt);
+        }catch (Exception e) {
+
+        }
+
+
+
+
+        for (int i = 0; i < t.length; i++)
 
             System.out.println(t[i]);
 
     }
+
 }
